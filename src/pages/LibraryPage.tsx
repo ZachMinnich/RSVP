@@ -71,15 +71,15 @@ export default function LibraryPage({ navigate }: Props) {
         }));
 
         const now = new Date().toISOString();
-        const existing = getBookById('daily-poem');
+        const existing = getBookById('dailypoem');
 
         const book: Book = {
-          id: 'daily-poem',
+          id: 'dailypoem',
           title: 'Daily Poem',
           author: 'n8n Daily Feed',
           description: 'Automatically imported each day from GitHub.',
           coverImage: '',
-          sourceNote: 'Source: poems/daily-poem.txt (GitHub)',
+          sourceNote: 'Source: poems/dailypoem.txt (GitHub)',
           rawText: text,
           cleanedText: result.cleanedText,
           chapters,
@@ -107,8 +107,8 @@ export default function LibraryPage({ navigate }: Props) {
   const [sort, setSort] = useState<SortOption>('recent');
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
 
-  const dailyPoem = books.find(b => b.id === 'daily-poem');
-  const otherBooks = books.filter(b => b.id !== 'daily-poem');
+  const dailyPoem = books.find(b => b.id === 'dailypoem');
+  const otherBooks = books.filter(b => b.id !== 'dailypoem');
 
   const filtered = useMemo(() => {
     let list = [...otherBooks];
