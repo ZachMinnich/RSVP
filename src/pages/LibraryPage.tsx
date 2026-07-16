@@ -51,7 +51,7 @@ export default function LibraryPage({ navigate }: Props) {
     async function syncDailyPoem() {
       try {
         const res = await fetch(
-          'https://raw.githubusercontent.com/ZachMinnich/RSVP/main/poems/daily-poem.txt',
+          'https://raw.githubusercontent.com/ZachMinnich/RSVP/main/poems/dailypoem.txt',
         );
         if (!res.ok) {
           console.warn('Daily poem not available:', res.status);
